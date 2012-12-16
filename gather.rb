@@ -31,11 +31,17 @@ def get_comic(comic_cfg, dest)
   }
 end
 
-mkdir!($config["dest_dir"])
+def scheduled?(date, schedule)
+  return true if schedule.to_s == '*'
+  return schedule.to_s.include?(date.wday.to_s)
+end
 
+mkdir!($config["dest_dir"])
 $comics.each do |comic,v|
-  p parse($comics[comic]["page"])
   mkdir!("#{$config["dest_dir"]}/#{@date.to_s}")
   comic_cfg = $comics[comic]
-  get_comic($comics[comic], "#{$config["dest_dir"]}/#{@date.to_s}/#{comic}.#{comic_cfg["extension"]}")
+  if scheduled?(@date, comic_cfg["schedule"])
+    p "downloading: #{parse($comics[comic]["page"])}"
+    get_comic($comics[comic], "#{$config["dest_dir"]}/#{@date.to_s}/#{comic}.#{comic_cfg["extension"]}")
+  end
 end

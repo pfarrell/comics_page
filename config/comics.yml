@@ -3,76 +3,34 @@ dilbert:
   indicator: "EmbedCode"
   regex: "http.*gif"
   extension: gif
+  schedule: "*"
 doonesbury:
   page: 'http://gocomics.com/doonesbury/{year}/{month}/{day}'
   indicator: 'feature_item"'
   regex: "http://assets.amuniversal.com/[a-f0-9]+"
   extension: 'gif'
+  schedule: "*"
 calvin:
   page: 'http://gocomics.com/calvinandhobbes/{year}/{month}/{day}'
   indicator: 'feature_item"'
   regex: "http://assets.amuniversal.com/[a-f0-9]+"
   extension: 'gif'
+  schedule: "*"
 foxtrot:
   page: 'http://gocomics.com/foxtrot/{year}/{month}/{day}'
   indicator: 'feature_item"'
   regex: "http://assets.amuniversal.com/[a-f0-9]+"
   extension: 'gif'
+  schedule: "0"
 forbetterorforworse:
   page: 'http://gocomics.com/forbetterorforworse/{year}/{month}/{day}'
   indicator: 'feature_item"'
   regex: "http://assets.amuniversal.com/[a-f0-9]+"
   extension: 'gif'
+  schedule: "*"
 mikeluckovich:
   page: 'http://gocomics.com/mikeluckovich/{year}/{month}/{day}'
   indicator: 'feature_item"'
   regex: "http://assets.amuniversal.com/[a-f0-9]+"
   extension: 'gif'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  schedule: 3
