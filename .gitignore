@@ -1,3 +1,4 @@
 vendor
 public
 .bundle
+.DS_Store
