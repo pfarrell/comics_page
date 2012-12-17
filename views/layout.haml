@@ -7,6 +7,10 @@
     %meta{:name => "viewport", :content=>"width-device-width, initial-scale=1.0, userscalable=no"}
   %body
     %div.header
+      %a{:href=>"#{@date - 1}"}
+        = (@date - 1).to_s
+      %a{:href=>"#{@date + 1}"}
+        = (@date + 1).to_s
     =yield
     %div.container.footer
 
