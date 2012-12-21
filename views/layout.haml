@@ -5,16 +5,28 @@
       #{@title}
     %meta{:charset => "utf-8"}
     %meta{:name => "viewport", :content=>"width-device-width, initial-scale=1.0, userscalable=no"}
+    %link{:href=>"css/bootstrap.css", :rel=>"stylesheet", :media=>"screen"}
   %body
-    %div.header
-      %a{:href=>"#{@date - 1}"}
-        = (@date - 1).to_s
-      %a{:href=>"#{@date + 1}"}
-        = (@date + 1).to_s
-    =yield
-    %div.container.footer
-      %a{:href=>"#{@date - 1}"}
-        = (@date - 1).to_s
-      %a{:href=>"#{@date + 1}"}
-        = (@date + 1).to_s
+    %div.navbar.navbar-inverse.navbar-fixed-top
+      %div.navbar-inner
+        %div.container
+          %a.btn.btn-navbar{"data-toggle"=>"collapse", "data-target"=>".nav-collapse"} 
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %div.nav-collapse
+            %ul.nav
+              %li
+                %a{:href=>"#{@date - 1}"}
+                  = (@date - 1).to_s
+              %li
+                %a{:href=>"#{@date + 1}"}
+                  = (@date + 1).to_s
+    %div.container
+      %br
+      %br
+      %br
+      =yield
 
+    %script{:src=>"http://code.jquery.com/jquery-latest.js"}
+    %script{:src=>"js/bootstrap.js"}
