@@ -2,6 +2,9 @@ require 'sinatra'
 require 'date'
 require 'haml'
 
+set :port, 4579
+set :haml =>{:format => :html5}
+
 $config = YAML.load_file 'config/config.yml'
 
 def get_files(search_path, dest_path)
