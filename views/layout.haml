@@ -18,6 +18,9 @@
           %div.nav-collapse
             %ul.nav
               %li
+                %a{:href=>"/"}
+                  Today
+              %li
                 %a{:href=>"#{@date - 1}"}
                   = (@date - 1).to_s
               %li
