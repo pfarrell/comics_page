@@ -2,3 +2,4 @@ vendor
 public/2*
 .bundle
 .DS_Store
+nohup.out

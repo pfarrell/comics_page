@@ -6,6 +6,7 @@
     %meta{:charset => "utf-8"}
     %meta{:name => "viewport", :content=>"width-device-width, initial-scale=1.0, userscalable=no"}
     %link{:href=>"css/bootstrap.css", :rel=>"stylesheet", :media=>"screen"}
+    %link{:href=>"css/default.css", :rel=>"stylesheet", :media=>"screen"}
   %body
     %div.navbar.navbar-inverse.navbar-fixed-top
       %div.navbar-inner
@@ -23,10 +24,8 @@
                 %a{:href=>"#{@date + 1}"}
                   = (@date + 1).to_s
     %div.container
-      %br
-      %br
-      %br
       =yield
+    %div.container.footer
 
     %script{:src=>"http://code.jquery.com/jquery-latest.js"}
     %script{:src=>"js/bootstrap.js"}
