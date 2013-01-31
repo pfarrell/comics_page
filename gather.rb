@@ -50,6 +50,13 @@ def scheduled?(date, schedule)
   return schedule.to_s.include?(date.wday.to_s)
 end
 
+def clean_dir(path)
+  Dir.glob(path).each do |f|
+    #p File.size(f)
+    File.delete(f) if File.size(f) == 0
+  end
+end
+
 mkdir!($config["dest_dir"])
 
 mkdir!("#{$config["dest_dir"]}/#{@date.to_s}")
@@ -76,3 +83,5 @@ $comics["download"].each do |comic,comic_cfg|
     get_comic(parse_date(comic_cfg), "#{$config["dest_dir"]}/#{@date.to_s}/#{comic}.#{comic_cfg["extension"]}")
   end
 end
+
+clean_dir "#{$config["dest_dir"]}/#{@date.to_s}/*"
