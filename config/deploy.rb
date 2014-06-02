@@ -21,6 +21,7 @@ set :log_level, :info
 
 # Default value for :pty is false
 set :pty, true
+set :deploy_via, :remote_cache
 
 # Default value for :linked_files is []
 # set :linked_files, %w{config/database.yml}
@@ -40,7 +41,7 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      execute :touch, release_path.join('tmp/restart.txt')
     end
   end
 
