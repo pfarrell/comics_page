@@ -24,11 +24,9 @@ get '/favicon.ico' do
 end
 
 get '/:date' do
-  p "#{params['date']}"
   @date = Date.parse(params['date'])
   @title = "Comics for #{@date.to_s}"
   @files = get_files("#{$config["dest_dir"]}/#{@date.to_s}", @date.to_s)
-  p @files.inspect
   haml :index
 end
 
