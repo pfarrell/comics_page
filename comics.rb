@@ -16,7 +16,7 @@ def get_files(search_path, dest_path)
 end
 
 get '/' do
-  redirect "/#{Date.today.to_s}"
+  redirect url_for "/#{Date.today.to_s}"
 end
 
 get '/favicon.ico' do
