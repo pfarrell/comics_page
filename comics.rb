@@ -1,8 +1,8 @@
 require 'sinatra'
 require 'date'
 require 'haml'
+require 'yaml'
 
-set :port, 4579
 set :haml =>{:format => :html5}
 
 $config = YAML.load_file 'config/config.yml'
@@ -10,7 +10,7 @@ $config = YAML.load_file 'config/config.yml'
 def get_files(search_path, dest_path)
   ret=[]
   Dir.foreach(search_path) do |f|
-    ret.push("#{dest_path}/#{f}") unless f == "." || f==".."
+    ret.push("comics/#{dest_path}/#{f}") unless f == "." || f==".."
   end
   ret
 end
