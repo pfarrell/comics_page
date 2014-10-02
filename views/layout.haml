@@ -18,14 +18,15 @@
           %div.nav-collapse
             %ul.nav
               %li
-                %a{:href=>"#{url_for "/"}"}
-                  Today
-              %li
                 %a{:href=>"#{@date - 1}"}
                   = (@date - 1).to_s
+              -unless @date + 1 > DateTime.now
+                %li
+                  %a{:href=>"#{@date + 1}"}
+                    = (@date + 1).to_s
               %li
-                %a{:href=>"#{@date + 1}"}
-                  = (@date + 1).to_s
+                %a{:href=>"#{url_for "/"}"}
+                  Today
     %div.container
       =yield
     %div.container.footer
