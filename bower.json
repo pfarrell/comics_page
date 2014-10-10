@@ -1,0 +1,26 @@
+{
+  "name": "comics_page",
+  "version": "0.0.2",
+  "homepage": "https://github.com/pfarrell/comics_page",
+  "authors": [
+    "Patrick Farrell <mr.patfarrell@gmail.com>"
+  ],
+  "description": "comics pages",
+  "keywords": [
+    "comics",
+    "sinatra"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}
