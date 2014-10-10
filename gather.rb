@@ -1,4 +1,10 @@
-%w(yaml open-uri date ./lastn).each { |dependency| require dependency }
+class String
+  def last(n)
+    self[-n,n]
+  end
+end
+
+%w(yaml open-uri date).each { |dependency| require dependency }
 
 $comics = YAML.load_file 'config/comics.yml'
 $config = YAML.load_file 'config/config.yml'
