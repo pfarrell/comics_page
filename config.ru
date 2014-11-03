@@ -1,11 +1,7 @@
-require 'rubygems'
-require 'sinatra'
-gem 'emk-sinatra-url-for'
-require 'sinatra/url_for'
+root = ::File.dirname(__FILE__)
+require ::File.join(root, 'app')
 
 set :environment, ENV['RACK_ENV'].to_sym
 disable :run, :reload
 
-require './comics'
-
-run Sinatra::Application
+run Comics.new
