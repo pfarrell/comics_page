@@ -11,8 +11,8 @@ $config = YAML.load_file 'config/config.yml'
 
 @date = ARGV[0].nil? ? Date.today : Date.parse(ARGV[0])
 
-def mkdir!(directory) 
-  Dir::mkdir(directory) unless FileTest::directory?(directory) 
+def mkdir!(directory)
+  Dir::mkdir(directory) unless FileTest::directory?(directory)
 end
 
 def parse_date cfg

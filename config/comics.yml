@@ -1,8 +1,8 @@
 date:
   dilbert:
-    uri: 'http://dilbert.com/{year}-{month}-{day}'
-    indicator: "EmbedCode"
-    regex: "http.*gif"
+    uri: 'https://dilbert.com/strip/{year}-{month}-{day}'
+    indicator: "twitter:image"
+    regex: "https.*assets.amuni.*"
     extension: gif
     schedule: "*"
   doonesbury:
